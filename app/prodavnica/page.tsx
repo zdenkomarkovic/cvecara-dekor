@@ -8,6 +8,8 @@ import {
 import ProductCard from "@/components/shop/ProductCard";
 import Link from "next/link";
 
+export const revalidate = 60;
+
 export const metadata: Metadata = {
   title: "Prodavnica",
   description:

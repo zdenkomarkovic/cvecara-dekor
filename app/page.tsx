@@ -6,6 +6,8 @@ import { JsonLd } from "@/components/seo/JsonLd";
 import { SITE_URL } from "@/lib/constants";
 import type { Metadata } from "next";
 
+export const revalidate = 60; // osvježi svakih 60s
+
 export const metadata: Metadata = {
   title: "Cvećara Dekor – Kragujevac | Dostava cveća",
   description:
@@ -143,7 +145,7 @@ export default async function HomePage() {
               lineHeight: 1.8,
             }}
           >
-            Profesionalni aranžmani, svježe cveće i prigodni bukveti. Dostava na teritoriji
+            Profesionalni aranžmani, sveže cveće i prigodni buketi. Dostava na teritoriji
             Kragujevca.
           </p>
 
@@ -169,7 +171,7 @@ export default async function HomePage() {
             }}
           >
             <HeroStat number="10+" label="Godina iskustva" />
-            <HeroStat number="∞" label="Svježih aranžmana" />
+            <HeroStat number="∞" label="Svežih aranžmana" />
             <HeroStat number="🚚" label="Dostava u Kragujevcu" />
           </div>
         </div>
@@ -348,12 +350,12 @@ export default async function HomePage() {
               }}
             >
               <p>
-                Cvećara Dekor je vaša pouzdana adresa za svježe cveće i prigodne aranžmane u
+                Cvećara Dekor je vaša pouzdana adresa za sveže cveće i prigodne aranžmane u
                 Kragujevcu. Nudimo bukete, dekoracije i poklone za sve životne prilike.
               </p>
               <p>
                 Posvećeni smo kvalitetu i zadovoljstvu naših kupaca. Svaki aranžman pravimo sa
-                pažnjom i ljubavlju, koristeći najsvježije cveće.
+                pažnjom i ljubavlju, koristeći najsvežije cveće.
               </p>
             </div>
             <div
@@ -469,7 +471,7 @@ export default async function HomePage() {
 }
 
 const categories = [
-  { icon: "💐", title: "Bukveti", desc: "Svježi i mirisni bukveti za sve prilike" },
+  { icon: "💐", title: "Bukveti", desc: "Sveži i mirisni bukveti za sve prilike" },
   { icon: "🌹", title: "Ruže", desc: "Crvene, bijele, pink – sve boje ljubavi" },
   { icon: "🎀", title: "Pokloni", desc: "Cvetni aranžmani u kutijama i vazama" },
   { icon: "💍", title: "Svadbe", desc: "Dekoracije i ukrasi za vjenčanja" },
