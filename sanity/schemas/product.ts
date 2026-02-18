@@ -22,7 +22,7 @@ export const productType = defineType({
       name: "price",
       title: "Cena (RSD)",
       type: "number",
-      validation: (rule) => rule.required().min(0),
+      validation: (rule) => rule.min(0),
     }),
     defineField({
       name: "description",
