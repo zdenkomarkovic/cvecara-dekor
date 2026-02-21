@@ -53,7 +53,7 @@ export default function ProizvodPage({ params }: PageProps) {
       addItem({
         id: product._id,
         name: product.name,
-        price: product.price,
+        price: product.price ?? 0,
         image: cartImageUrl,
         slug: product.slug.current,
       });
