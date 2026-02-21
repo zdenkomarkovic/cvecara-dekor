@@ -1,10 +1,5 @@
 import type { Metadata } from "next";
-import {
-  getAllProducts,
-  getAllCategories,
-  type SanityProduct,
-  type SanityCategory,
-} from "@/sanity/lib/fetch";
+import { getAllProducts, type SanityProduct } from "@/sanity/lib/fetch";
 import ProductCard from "@/components/shop/ProductCard";
 import Link from "next/link";
 
@@ -16,29 +11,14 @@ export const metadata: Metadata = {
     "Pogledajte našu kompletnu ponudu – bukveti, aranžmani, dekoracije i pokloni. Dostava na teritoriji Kragujevca.",
 };
 
-interface SearchParams {
-  kategorija?: string;
-}
-
-export default async function ProdavnicaPage({
-  searchParams,
-}: {
-  searchParams: Promise<SearchParams>;
-}) {
-  const { kategorija } = await searchParams;
-
+export default async function ProdavnicaPage() {
   let products: SanityProduct[] = [];
-  let categories: SanityCategory[] = [];
 
   try {
-    [products, categories] = await Promise.all([getAllProducts(), getAllCategories()]);
+    products = await getAllProducts();
   } catch {
     // Sanity nije konfigurisan
   }
-
-  const filtered = kategorija
-    ? products.filter((p) => p.category?.slug?.current === kategorija)
-    : products;
 
   return (
     <div style={{ minHeight: "60vh" }}>
@@ -81,30 +61,8 @@ export default async function ProdavnicaPage({
           padding: "3rem 1.5rem",
         }}
       >
-        {/* Category filter */}
-        {categories.length > 0 && (
-          <div
-            style={{
-              display: "flex",
-              gap: "0.75rem",
-              flexWrap: "wrap",
-              marginBottom: "2.5rem",
-            }}
-          >
-            <FilterLink href="/prodavnica" active={!kategorija} label="Sve" />
-            {categories.map((cat) => (
-              <FilterLink
-                key={cat._id}
-                href={`/prodavnica?kategorija=${cat.slug.current}`}
-                active={kategorija === cat.slug.current}
-                label={cat.name}
-              />
-            ))}
-          </div>
-        )}
-
         {/* Products grid */}
-        {filtered.length > 0 ? (
+        {products.length > 0 ? (
           <>
             <p
               style={{
@@ -113,7 +71,7 @@ export default async function ProdavnicaPage({
                 marginBottom: "1.5rem",
               }}
             >
-              {filtered.length} {filtered.length === 1 ? "proizvod" : "proizvoda"}
+              {products.length} {products.length === 1 ? "proizvod" : "proizvoda"}
             </p>
             <div
               style={{
@@ -122,7 +80,7 @@ export default async function ProdavnicaPage({
                 gap: "1.5rem",
               }}
             >
-              {filtered.map((product) => (
+              {products.map((product) => (
                 <ProductCard key={product._id} product={product} />
               ))}
             </div>
@@ -143,57 +101,22 @@ export default async function ProdavnicaPage({
                 marginBottom: "1rem",
               }}
             >
-              {products.length === 0
-                ? "Prodavnica se puni..."
-                : "Nema proizvoda u ovoj kategoriji"}
+              Prodavnica se puni...
             </h2>
             <p style={{ color: "var(--color-gray)", marginBottom: "2rem" }}>
-              {products.length === 0
-                ? "Dodajte proizvode kroz Sanity Studio ili nas pozovite direktno."
-                : "Pogledajte drugu kategoriju."}
+              Dodajte proizvode kroz Sanity Studio ili nas pozovite direktno.
             </p>
             <div style={{ display: "flex", gap: "1rem", justifyContent: "center", flexWrap: "wrap" }}>
               <a href="tel:0656268801" className="btn-primary">
                 Pozovite nas
               </a>
-              <Link href="/prodavnica" className="btn-outline">
-                Svi proizvodi
+              <Link href="/" className="btn-outline">
+                Početna
               </Link>
             </div>
           </div>
         )}
       </div>
     </div>
-  );
-}
-
-function FilterLink({
-  href,
-  active,
-  label,
-}: {
-  href: string;
-  active: boolean;
-  label: string;
-}) {
-  return (
-    <Link
-      href={href}
-      style={{
-        padding: "0.5rem 1.25rem",
-        borderRadius: "2px",
-        fontSize: "0.8rem",
-        letterSpacing: "0.08em",
-        textTransform: "uppercase",
-        textDecoration: "none",
-        border: "1px solid",
-        borderColor: active ? "var(--color-rose)" : "var(--color-rose-light)",
-        backgroundColor: active ? "var(--color-rose)" : "transparent",
-        color: active ? "white" : "var(--color-dark)",
-        transition: "all 0.2s",
-      }}
-    >
-      {label}
-    </Link>
   );
 }

@@ -37,12 +37,6 @@ export const productType = defineType({
       of: [{ type: "image", options: { hotspot: true } }],
     }),
     defineField({
-      name: "category",
-      title: "Kategorija",
-      type: "reference",
-      to: [{ type: "category" }],
-    }),
-    defineField({
       name: "inStock",
       title: "Na stanju",
       type: "boolean",
@@ -64,7 +58,7 @@ export const productType = defineType({
     prepare({ title, media, price }) {
       return {
         title,
-        subtitle: price ? `${price} RSD` : "",
+        subtitle: price != null ? `${price} RSD` : "Cena na upit",
         media,
       };
     },

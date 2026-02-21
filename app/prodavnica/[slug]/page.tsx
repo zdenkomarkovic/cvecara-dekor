@@ -312,20 +312,6 @@ export default function ProizvodPage({ params }: PageProps) {
 
         {/* ── Product details ── */}
         <div>
-          {product.category && (
-            <p
-              style={{
-                fontSize: "0.75rem",
-                letterSpacing: "0.12em",
-                textTransform: "uppercase",
-                color: "var(--color-rose)",
-                marginBottom: "0.5rem",
-              }}
-            >
-              {product.category.name}
-            </p>
-          )}
-
           <h1
             style={{
               fontFamily: "var(--font-serif)",
@@ -348,7 +334,7 @@ export default function ProizvodPage({ params }: PageProps) {
               marginBottom: "1.5rem",
             }}
           >
-            {product.price.toLocaleString("sr-RS")} RSD
+            {product.price != null ? `${product.price.toLocaleString("sr-RS")} RSD` : "Cena na upit"}
           </p>
 
           {product.description && (

@@ -23,14 +23,14 @@ export default function ProductCard({ product }: ProductCardProps) {
     addItem({
       id: product._id,
       name: product.name,
-      price: product.price,
+      price: product.price ?? 0,
       image: imageUrl ?? undefined,
       slug: product.slug.current,
     });
   }
 
   return (
-    <Link href={`/prodavnica/${product.slug.current}`} style={{ textDecoration: "none" }}>
+    <Link href={`/prodavnica/${product.slug.current}`} style={{ textDecoration: "none", display: "flex", height: "100%" }}>
       <div
         style={{
           backgroundColor: "white",
@@ -38,6 +38,9 @@ export default function ProductCard({ product }: ProductCardProps) {
           overflow: "hidden",
           transition: "transform 0.2s, box-shadow 0.2s",
           cursor: "pointer",
+          display: "flex",
+          flexDirection: "column",
+          width: "100%",
         }}
         onMouseEnter={(e) => {
           (e.currentTarget as HTMLElement).style.transform = "translateY(-4px)";
@@ -122,21 +125,7 @@ export default function ProductCard({ product }: ProductCardProps) {
         </div>
 
         {/* Info */}
-        <div style={{ padding: "1rem" }}>
-          {product.category && (
-            <p
-              style={{
-                fontSize: "0.7rem",
-                letterSpacing: "0.1em",
-                textTransform: "uppercase",
-                color: "var(--color-gray)",
-                marginBottom: "0.25rem",
-              }}
-            >
-              {product.category.name}
-            </p>
-          )}
-
+        <div style={{ padding: "1rem", display: "flex", flexDirection: "column", flex: 1 }}>
           <h3
             style={{
               fontFamily: "var(--font-serif)",
@@ -156,7 +145,8 @@ export default function ProductCard({ product }: ProductCardProps) {
               display: "flex",
               justifyContent: "space-between",
               alignItems: "center",
-              marginTop: "0.75rem",
+              marginTop: "auto",
+              paddingTop: "0.75rem",
             }}
           >
             <p
@@ -167,7 +157,7 @@ export default function ProductCard({ product }: ProductCardProps) {
                 color: "var(--color-rose)",
               }}
             >
-              {product.price.toLocaleString("sr-RS")} RSD
+              {product.price != null ? `${product.price.toLocaleString("sr-RS")} RSD` : "Cena na upit"}
             </p>
 
             <button
