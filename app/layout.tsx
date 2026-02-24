@@ -12,13 +12,51 @@ export const metadata: Metadata = {
   },
   description:
     "Cvećara Dekor – profesionalni aranžmani cveća za sve prilike. Dostava na teritoriji Kragujevca. Pozovite 065 626 8801.",
+  keywords: [
+    "cvećara",
+    "cvecara",
+    "Kragujevac",
+    "buket",
+    "buketi",
+    "aranžman",
+    "cveće",
+    "cvece",
+    "dostava cveća",
+    "cvećara Kragujevac",
+    "pokloni cveće",
+    "svadbena dekoracija",
+  ],
+  alternates: {
+    canonical: SITE_URL,
+  },
   openGraph: {
     type: "website",
     locale: "sr_RS",
     url: SITE_URL,
     siteName: "Cvećara Dekor",
+    images: [
+      {
+        url: "/1000052585.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Cvećara Dekor – buketi i aranžmani Kragujevac",
+      },
+    ],
   },
-  twitter: { card: "summary_large_image" },
+  twitter: {
+    card: "summary_large_image",
+    images: ["/1000052585.jpg"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

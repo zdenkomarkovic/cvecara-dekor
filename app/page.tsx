@@ -12,6 +12,23 @@ export const metadata: Metadata = {
   title: "Cvećara Dekor – Kragujevac | Dostava cveća",
   description:
     "Cvećara Dekor u Kragujevcu – bukveti, aranžmani i dekorativno cveće za sve prilike. Dostava na teritoriji Kragujevca. Poručite online ili pozovite 065 626 8801.",
+  alternates: {
+    canonical: SITE_URL,
+  },
+  openGraph: {
+    title: "Cvećara Dekor – Kragujevac",
+    description:
+      "Profesionalni bukveti i aranžmani cveća u Kragujevcu. Dostava na teritoriji Kragujevca.",
+    url: SITE_URL,
+    images: [
+      {
+        url: "/1000052585.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Cvećara Dekor – buketi i aranžmani Kragujevac",
+      },
+    ],
+  },
 };
 
 const localImages = [
@@ -46,14 +63,28 @@ export default async function HomePage() {
     "@context": "https://schema.org",
     "@type": "Florist",
     name: "Cvećara Dekor",
+    image: `${SITE_URL}/1000052585.jpg`,
+    logo: `${SITE_URL}/logo.png`,
     address: {
       "@type": "PostalAddress",
       streetAddress: "Potporucnika Govedarice 15",
       addressLocality: "Kragujevac",
+      postalCode: "34000",
       addressCountry: "RS",
+    },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: 44.0165,
+      longitude: 20.9114,
     },
     telephone: "+381656268801",
     url: SITE_URL,
+    priceRange: "$$",
+    servesCuisine: "Cveće i aranžmani",
+    areaServed: {
+      "@type": "City",
+      name: "Kragujevac",
+    },
     sameAs: ["https://instagram.com/cvecara_dekor_kg"],
   };
 

@@ -2,7 +2,7 @@
 // Ove vrednosti se koriste za SEO, metadata, itd.
 
 export const SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://cvecaradekor.rs";
 
 export const SITE_NAME =
   process.env.NEXT_PUBLIC_SITE_NAME ?? "Cvećara Dekor";

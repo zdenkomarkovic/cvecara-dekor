@@ -2,13 +2,23 @@ import type { Metadata } from "next";
 import { getAllProducts, type SanityProduct } from "@/sanity/lib/fetch";
 import ProductCard from "@/components/shop/ProductCard";
 import Link from "next/link";
+import { SITE_URL } from "@/lib/constants";
 
 export const revalidate = 60;
 
 export const metadata: Metadata = {
-  title: "Prodavnica",
+  title: "Prodavnica – Cveće i aranžmani",
   description:
-    "Pogledajte našu kompletnu ponudu – bukveti, aranžmani, dekoracije i pokloni. Dostava na teritoriji Kragujevca.",
+    "Pogledajte ponudu Cvećare Dekor – bukveti, ruže, aranžmani, dekoracije i pokloni. Dostava na teritoriji Kragujevca. Naručite online.",
+  alternates: {
+    canonical: `${SITE_URL}/prodavnica`,
+  },
+  openGraph: {
+    title: "Prodavnica | Cvećara Dekor",
+    description:
+      "Buketi, ruže, aranžmani i pokloni – sve za svaku prigodu. Online narudžba, dostava Kragujevac.",
+    url: `${SITE_URL}/prodavnica`,
+  },
 };
 
 export default async function ProdavnicaPage() {

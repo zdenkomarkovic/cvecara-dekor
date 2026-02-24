@@ -2,6 +2,7 @@ import { client, isSanityConfigured } from "./client";
 
 export interface SanityProduct {
   _id: string;
+  _updatedAt: string;
   name: string;
   slug: { current: string };
   price?: number | null;
@@ -21,7 +22,7 @@ function requireClient() {
 export async function getAllProducts(): Promise<SanityProduct[]> {
   return requireClient().fetch(
     `*[_type == "product"] | order(_createdAt desc) {
-      _id, name, slug, price, description, images, inStock, featured
+      _id, _updatedAt, name, slug, price, description, images, inStock, featured
     }`
   );
 }
@@ -29,7 +30,7 @@ export async function getAllProducts(): Promise<SanityProduct[]> {
 export async function getFeaturedProducts(): Promise<SanityProduct[]> {
   return requireClient().fetch(
     `*[_type == "product" && featured == true] | order(_createdAt desc) [0...8] {
-      _id, name, slug, price, description, images, inStock, featured
+      _id, _updatedAt, name, slug, price, description, images, inStock, featured
     }`
   );
 }
@@ -37,7 +38,7 @@ export async function getFeaturedProducts(): Promise<SanityProduct[]> {
 export async function getProductBySlug(slug: string): Promise<SanityProduct | null> {
   return requireClient().fetch(
     `*[_type == "product" && slug.current == $slug][0] {
-      _id, name, slug, price, description, images, inStock, featured
+      _id, _updatedAt, name, slug, price, description, images, inStock, featured
     }`,
     { slug }
   );
