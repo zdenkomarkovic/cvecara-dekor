@@ -7,9 +7,9 @@ import { SITE_URL } from "@/lib/constants";
 export const revalidate = 60;
 
 export const metadata: Metadata = {
-  title: "Prodavnica – Cveće i aranžmani",
+  title: "Prodavnica – Cvećara Dekor Kragujevac | Bukveti i aranžmani",
   description:
-    "Pogledajte ponudu Cvećare Dekor – bukveti, ruže, aranžmani, dekoracije i pokloni. Dostava na teritoriji Kragujevca. Naručite online.",
+    "Pogledajte ponudu cvećare Dekor u Kragujevcu – bukveti, ruže, aranžmani, dekoracije i pokloni. Dostava na teritoriji Kragujevca. Naručite online.",
   alternates: {
     canonical: `${SITE_URL}/prodavnica`,
   },
@@ -50,7 +50,7 @@ export default async function ProdavnicaPage() {
             color: "var(--color-dark)",
           }}
         >
-          Prodavnica
+          Cvećara Dekor Kragujevac
         </h1>
         <div className="divider" />
         <p
@@ -60,7 +60,11 @@ export default async function ProdavnicaPage() {
             lineHeight: 1.7,
           }}
         >
-          Svježe cveće i prigodni aranžmani za sve životne prilike
+          Sveže cveće i prigodni aranžmani za sve životne prilike –
+          naručite online ili pozovite{" "}
+          <a href="tel:0656268801" style={{ color: "var(--color-rose)", textDecoration: "none" }}>
+            065 626 8801
+          </a>
         </p>
       </div>
 

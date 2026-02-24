@@ -9,23 +9,23 @@ import type { Metadata } from "next";
 export const revalidate = 60; // osvježi svakih 60s
 
 export const metadata: Metadata = {
-  title: "Cvećara Dekor – Kragujevac | Dostava cveća",
+  title: "Cvećara Dekor Kragujevac – Bukveti, Aranžmani i Dostava Cveća",
   description:
-    "Cvećara Dekor u Kragujevcu – bukveti, aranžmani i dekorativno cveće za sve prilike. Dostava na teritoriji Kragujevca. Poručite online ili pozovite 065 626 8801.",
+    "Cvećara Dekor – vaša cvećara u Kragujevcu. Bukveti, ruže, aranžmani i dekorativno cveće za sve prilike. Dostava na teritoriji Kragujevca. Pozovite 065 626 8801.",
   alternates: {
     canonical: SITE_URL,
   },
   openGraph: {
-    title: "Cvećara Dekor – Kragujevac",
+    title: "Cvećara Dekor Kragujevac – Bukveti i Aranžmani",
     description:
-      "Profesionalni bukveti i aranžmani cveća u Kragujevcu. Dostava na teritoriji Kragujevca.",
+      "Vaša cvećara u Kragujevcu – bukveti, ruže, aranžmani i pokloni. Dostava na teritoriji Kragujevca.",
     url: SITE_URL,
     images: [
       {
         url: "/1000052585.jpg",
         width: 1200,
         height: 630,
-        alt: "Cvećara Dekor – buketi i aranžmani Kragujevac",
+        alt: "Cvećara Dekor Kragujevac – buketi i aranžmani",
       },
     ],
   },
@@ -161,6 +161,19 @@ export default async function HomePage() {
               maxWidth: "700px",
             }}
           >
+            <span
+              style={{
+                display: "block",
+                fontSize: "clamp(1rem, 2.5vw, 1.5rem)",
+                fontWeight: 400,
+                letterSpacing: "0.12em",
+                textTransform: "uppercase",
+                color: "rgba(255,255,255,0.75)",
+                marginBottom: "0.5rem",
+              }}
+            >
+              Cvećara Dekor · Kragujevac
+            </span>
             Cveće za svaki
             <br />
             <em style={{ fontStyle: "italic", color: "var(--color-rose-light)" }}>
@@ -176,8 +189,8 @@ export default async function HomePage() {
               lineHeight: 1.8,
             }}
           >
-            Profesionalni aranžmani, sveže cveće i prigodni buketi. Dostava na teritoriji
-            Kragujevca.
+            Profesionalni aranžmani, sveže cveće i prigodni buketi.
+            Dostava na teritoriji Kragujevca.
           </p>
 
           <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap", marginTop: "0.5rem" }}>
@@ -231,7 +244,8 @@ export default async function HomePage() {
               lineHeight: 1.8,
             }}
           >
-            Od romantičnih buketa do svečanih aranžmana – sve radimo sa ljubavlju i pažnjom.
+            Cvećara Dekor u Kragujevcu – od romantičnih buketa do svečanih aranžmana, sve radimo
+            sa ljubavlju i pažnjom.
           </p>
 
           <div
@@ -385,8 +399,9 @@ export default async function HomePage() {
                 Kragujevcu. Nudimo bukete, dekoracije i poklone za sve životne prilike.
               </p>
               <p>
-                Posvećeni smo kvalitetu i zadovoljstvu naših kupaca. Svaki aranžman pravimo sa
-                pažnjom i ljubavlju, koristeći najsvežije cveće.
+                Kao cvećara u Kragujevcu sa dugogodišnjim iskustvom, posvećeni smo kvalitetu i
+                zadovoljstvu naših kupaca. Svaki aranžman pravimo sa pažnjom i ljubavlju,
+                koristeći najsvežije cveće.
               </p>
             </div>
             <div
@@ -471,7 +486,8 @@ export default async function HomePage() {
               marginBottom: "2.5rem",
             }}
           >
-            Imate pitanje ili posebnu narudžbinu? Slobodno nas kontaktirajte – odgovaramo brzo!
+            Imate pitanje ili posebnu narudžbinu? Cvećara Dekor Kragujevac je tu za vas –
+            slobodno nas kontaktirajte, odgovaramo brzo!
           </p>
 
           <div
