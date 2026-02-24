@@ -172,7 +172,7 @@ export default async function HomePage() {
                 marginBottom: "0.5rem",
               }}
             >
-              Cvećara Dekor · Kragujevac
+              Cvećara Dekor Kragujevac
             </span>
             Cveće za svaki
             <br />
@@ -189,8 +189,8 @@ export default async function HomePage() {
               lineHeight: 1.8,
             }}
           >
-            Profesionalni aranžmani, sveže cveće i prigodni buketi.
-            Dostava na teritoriji Kragujevca.
+            Profesionalni aranžmani, sveže cveće i prigodni buketi. Dostava na teritoriji
+            Kragujevca.
           </p>
 
           <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap", marginTop: "0.5rem" }}>
@@ -244,8 +244,8 @@ export default async function HomePage() {
               lineHeight: 1.8,
             }}
           >
-            Cvećara Dekor u Kragujevcu – od romantičnih buketa do svečanih aranžmana, sve radimo
-            sa ljubavlju i pažnjom.
+            Cvećara Dekor u Kragujevcu – od romantičnih buketa do svečanih aranžmana, sve radimo sa
+            ljubavlju i pažnjom.
           </p>
 
           <div
@@ -400,8 +400,8 @@ export default async function HomePage() {
               </p>
               <p>
                 Kao cvećara u Kragujevcu sa dugogodišnjim iskustvom, posvećeni smo kvalitetu i
-                zadovoljstvu naših kupaca. Svaki aranžman pravimo sa pažnjom i ljubavlju,
-                koristeći najsvežije cveće.
+                zadovoljstvu naših kupaca. Svaki aranžman pravimo sa pažnjom i ljubavlju, koristeći
+                najsvežije cveće.
               </p>
             </div>
             <div
@@ -486,8 +486,8 @@ export default async function HomePage() {
               marginBottom: "2.5rem",
             }}
           >
-            Imate pitanje ili posebnu narudžbinu? Cvećara Dekor Kragujevac je tu za vas –
-            slobodno nas kontaktirajte, odgovaramo brzo!
+            Imate pitanje ili posebnu narudžbinu? Cvećara Dekor Kragujevac je tu za vas – slobodno
+            nas kontaktirajte, odgovaramo brzo!
           </p>
 
           <div
