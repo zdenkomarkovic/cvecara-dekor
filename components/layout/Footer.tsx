@@ -54,8 +54,7 @@ export default function Footer() {
               lineHeight: 1.7,
             }}
           >
-            Profesionalni aranžmani cveća za sve životne trenutke. Dostava na
-            teritoriji Kragujevca.
+            Profesionalni aranžmani cveća za sve životne trenutke. Dostava na teritoriji Kragujevca.
           </p>
         </div>
 
@@ -88,9 +87,7 @@ export default function Footer() {
                   transition: "color 0.2s",
                 }}
                 onMouseEnter={(e) => (e.currentTarget.style.color = "white")}
-                onMouseLeave={(e) =>
-                  (e.currentTarget.style.color = "rgba(255,255,255,0.6)")
-                }
+                onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(255,255,255,0.6)")}
               >
                 {label}
               </Link>
@@ -136,8 +133,8 @@ export default function Footer() {
           </p>
           <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
             <WorkHour day="Ponedeljak – Petak" hours="08:00 – 19:00" />
-            <WorkHour day="Subota" hours="08:00 – 16:00" />
-            <WorkHour day="Nedelja" hours="Po dogovoru" />
+            <WorkHour day="Subota" hours="08:00 – 19:00" />
+            <WorkHour day="Nedelja" hours="08:00 – 16:00" />
           </div>
         </div>
       </div>
@@ -158,23 +155,13 @@ export default function Footer() {
         <p style={{ fontSize: "0.8rem", color: "rgba(255,255,255,0.4)" }}>
           © {new Date().getFullYear()} Cvećara Dekor. Sva prava zadržana.
         </p>
-        <p style={{ fontSize: "0.8rem", color: "rgba(255,255,255,0.4)" }}>
-          Kragujevac, Srbija
-        </p>
+        <p style={{ fontSize: "0.8rem", color: "rgba(255,255,255,0.4)" }}>Kragujevac, Srbija</p>
       </div>
     </footer>
   );
 }
 
-function ContactItem({
-  icon,
-  text,
-  href,
-}: {
-  icon: string;
-  text: string;
-  href?: string;
-}) {
+function ContactItem({ icon, text, href }: { icon: string; text: string; href?: string }) {
   const content = (
     <span style={{ display: "flex", gap: "0.5rem", alignItems: "flex-start" }}>
       <span>{icon}</span>

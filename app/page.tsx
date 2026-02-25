@@ -496,6 +496,7 @@ export default async function HomePage() {
               gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))",
               gap: "1.5rem",
               marginBottom: "2.5rem",
+              alignItems: "stretch",
             }}
           >
             <ContactCard icon="📞" title="Telefon" value="065 626 8801" href="tel:0656268801" />
@@ -617,6 +618,7 @@ function ContactCard({
         borderRadius: "4px",
         textAlign: "center",
         border: "1px solid var(--color-rose-light)",
+        height: "100%",
       }}
     >
       <div style={{ fontSize: "2rem", marginBottom: "0.5rem" }}>{icon}</div>
